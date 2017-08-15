@@ -1,0 +1,49 @@
+{
+  "name": "a11y-components-library",
+  "version": "1.0.0",
+  "description": "a11y components library",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "rimraf static/ && mkdirp static/",
+    "build": "run-s build:*",
+    "build:assets": "node scripts/copy-assets.js",
+    "build:css": "node scripts/build-css.js",
+    "build:html": "node scripts/build-html.js",
+    "build:js": "node scripts/build-js.js",
+    "start": "node index.js",
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:assets": "chokidar 'src/assets/**/*' --command 'npm run build:assets'",
+    "watch:css": "chokidar 'src/**/*.less' --command 'npm run build:css'",
+    "watch:html": "chokidar 'src/**/*.html' --command 'npm run build:html'",
+    "watch:js": "chokidar 'src/**/*.js' --command 'npm run build:js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:voorhoede-labs/a11y-components-library.git"
+  },
+  "author": "De Voorhoede",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "devDependencies": {
+    "chokidar-cli": "1.2.0",
+    "eslint": "3.10.0",
+    "mkdirp": "0.5.1"
+  },
+  "dependencies": {
+    "bluebird": "3.4.6",
+    "express": "4.14.0",
+    "gulp": "3.9.1",
+    "gulp-autoprefixer": "3.1.1",
+    "gulp-clean-css": "2.3.2",
+    "gulp-concat": "2.6.1",
+    "gulp-less": "3.3.0",
+    "gulp-plumber": "1.1.0",
+    "gulp-sourcemaps": "2.4.0",
+    "gulp-uglify": "2.0.0",
+    "npm-run-all": "4.0.1",
+    "nunjucks": "3.0.0",
+    "rimraf": "2.5.4"
+  }
+}
