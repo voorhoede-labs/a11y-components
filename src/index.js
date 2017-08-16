@@ -2,4 +2,8 @@
 	if(app.expandable.isSupported) {
 		app.expandable.enhance();
 	}
+
+	if(app.tabs.isSupported) {
+		app.tabs.enhance();
+	}
 }(window.app));

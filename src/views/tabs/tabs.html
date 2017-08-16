@@ -1,0 +1,14 @@
+{% extends "views/_base/base.html" %}
+
+{% from "components/tabs/tabs.html" import tabs %}
+
+{%
+set content = {
+}
+%}
+
+{% block content %}
+	<h2>Tabs</h2>
+
+	{{ tabs(content) }}
+{% endblock %}

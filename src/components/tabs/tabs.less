@@ -1,0 +1,40 @@
+.tabs {
+	margin-bottom: @spacing-default*2;
+
+	.tabs-list,
+	.tab-content {
+		margin-bottom: @spacing-default;
+	}
+}
+
+.tabs.enhanced {
+	.tabs-list {
+		margin-bottom: 0;
+	}
+
+	.tab {
+		display: inline-block;
+		margin-bottom: -1px;
+
+		a {
+			display: block;
+			padding: @spacing-default/2 @spacing-default;
+			background: @brand-green;
+			border: 1px solid @brand-green;
+			color: @white;
+			text-decoration: none;
+		}
+
+		a.tab--selected {
+			background: @brand-yellow;
+			color: @brand-green;
+		}
+	}
+
+	.tab-content {
+		margin: 0;
+		padding: @spacing-default;
+		background: @brand-grey;
+		border: 1px solid @brand-green;
+	}
+}
