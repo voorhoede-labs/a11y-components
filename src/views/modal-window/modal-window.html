@@ -1,0 +1,23 @@
+{% extends "views/_base/base.html" %}
+
+{% from "components/modal-window/modal-window.html" import modalWindow %}
+
+{%
+set content = {
+	"openButtonLabel": "Open modal window",
+	"closeButtonLabel": "Close modal window",
+	"name": "modal",
+	"title": "Modal window",
+	"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mauris magna, consectetur et porttitor at, vestibulum sit amet mi. Morbi interdum blandit leo a sodales. Integer ac felis viverra, venenatis ex ut, rhoncus augue. Pellentesque ligula augue, dapibus id leo in, lobortis tincidunt lorem. Pellentesque sodales tortor nisl. Nullam tincidunt, dui eget laoreet vestibulum, dolor est vulputate justo, in mattis elit enim et magna. Cras risus diam, malesuada eu vestibulum vel, tempor eget est. Nam in hendrerit nisi. Nam aliquam nulla et nisi feugiat faucibus. Suspendisse vulputate lacus in porttitor tempor."
+}
+%}
+
+{% block content %}
+	<h2>Modal window</h2>
+
+	<button data-modal-trigger="{{ content.name }}">{{ content.openButtonLabel }}</button>
+{% endblock %}
+
+{% block sidecontent %}
+	{{ modalWindow(content) }}
+{% endblock %}
