@@ -1,0 +1,16 @@
+.tooltip__button {
+	width: 2rem;
+	height: 2rem;
+	background: data-uri('assets/question-mark.svg') no-repeat @white;
+	background-size: cover;
+	border: none;
+
+	&:hover + .tooltip__message,
+	&:focus + .tooltip__message {
+		display: block;
+	}
+}
+
+.tooltip__message {
+	display: none;
+}

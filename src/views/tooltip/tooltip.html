@@ -1,0 +1,16 @@
+{% extends "views/_base/base.html" %}
+
+{% from "components/tooltip/tooltip.html" import tooltip %}
+
+{%
+set content = {
+	"label": "More info on Lorem Ipsum",
+	"message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+}
+%}
+
+{% block content %}
+	<h2>Tooltip</h2>
+
+	{{ tooltip(content) }}
+{% endblock %}

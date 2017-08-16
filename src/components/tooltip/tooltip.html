@@ -1,0 +1,13 @@
+{% macro tooltip(content) %}
+<div class="tooltip">
+	<button class="tooltip__button"
+			aria-describedby="tooltip"
+			aria-label="{{ content.label }}"></button>
+
+	<span id="tooltip"
+		  class="tooltip__message"
+		  role="tooltip">
+		{{ content.message }}
+	</span>
+</div>
+{% endmacro %}
