@@ -1,0 +1,35 @@
+{% extends "views/_base/base.html" %}
+
+{% from "components/expandable/expandable.html" import expandable %}
+
+{%
+set content1 = {
+	"name": "expandable1",
+	"title": "Expandable 1",
+	"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mauris magna, consectetur et porttitor at, vestibulum sit amet mi. Morbi interdum blandit leo a sodales. Integer ac felis viverra, venenatis ex ut, rhoncus augue. Pellentesque ligula augue, dapibus id leo in, lobortis tincidunt lorem. Pellentesque sodales tortor nisl. Nullam tincidunt, dui eget laoreet vestibulum, dolor est vulputate justo, in mattis elit enim et magna. Cras risus diam, malesuada eu vestibulum vel, tempor eget est. Nam in hendrerit nisi. Nam aliquam nulla et nisi feugiat faucibus. Suspendisse vulputate lacus in porttitor tempor."
+}
+%}
+
+{%
+set content2 = {
+	"name": "expandable2",
+	"title": "Expandable 2",
+	"content": "Sed eu faucibus nulla. Praesent a interdum eros, volutpat euismod ante. Vestibulum rhoncus feugiat lectus, et euismod lorem posuere vel. Aenean eleifend mollis massa, a dapibus velit ornare sit amet. Sed viverra finibus ipsum, non semper magna posuere in. Nam tristique quam ligula, et iaculis est dignissim eget. Nam cursus, nibh vel sollicitudin iaculis, nulla mauris efficitur lectus, ac vehicula purus lectus ac dui. Curabitur maximus accumsan elementum. Suspendisse eu egestas nulla, sed lacinia dolor."
+}
+%}
+
+{%
+set content3 = {
+	"name": "expandable3",
+	"title": "Expandable 3",
+	"content": "Nam sapien purus, condimentum in neque ut, volutpat imperdiet diam. Nulla nulla elit, sagittis non arcu eget, vehicula euismod mauris. Quisque nulla mauris, rhoncus non imperdiet vel, consectetur vitae magna. Donec pharetra urna vel dui pharetra, a gravida justo hendrerit. Sed massa dui, pretium id ultricies non, congue a diam. Nunc mattis mattis arcu sed lobortis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur posuere iaculis libero, vel efficitur odio blandit eget."
+}
+%}
+
+{% block content %}
+	<h2>Expandable</h2>
+
+	{{ expandable(content1) }}
+	{{ expandable(content2) }}
+	{{ expandable(content3) }}
+{% endblock %}
