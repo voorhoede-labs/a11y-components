@@ -1,10 +1,14 @@
 (function(app) {
-	if(app.expandable.isSupported) {
-		app.expandable.enhance();
+	if(app.alert.isSupported) {
+		app.alert.enhance();
 	}
 
 	if(app.alertDialog.isSupported) {
 		app.alertDialog.enhance();
+	}
+
+	if(app.expandable.isSupported) {
+		app.expandable.enhance();
 	}
 
 	if(app.tabs.isSupported) {

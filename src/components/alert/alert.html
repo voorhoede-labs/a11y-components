@@ -1,0 +1,4 @@
+{% macro alert(content) %}
+<button data-alert-trigger>Trigger alert</button>
+<div role="alert" class="alert hidden" data-alert-container="{{ content }}"></div>
+{% endmacro %}

@@ -1,0 +1,13 @@
+{% extends "views/_base/base.html" %}
+
+{% from "components/alert/alert.html" import alert %}
+
+{%
+set content = "Loading new search results"
+%}
+
+{% block content %}
+	<h2>Alert</h2>
+
+	{{ alert(content) }}
+{% endblock %}
