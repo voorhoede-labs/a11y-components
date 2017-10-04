@@ -6,7 +6,7 @@
 	var SELECTOR_MODAL_WINDOW = '[data-modal-window]';
 	var SELECTOR_CLOSE_BUTTON = '[data-modal-close]';
 
-	app.modal = {
+	app.alertDialog = {
 		isSupported: 'querySelector' in document && 'classList' in document.documentElement,
 		enhance: enhance
 	};

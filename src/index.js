@@ -3,8 +3,8 @@
 		app.expandable.enhance();
 	}
 
-	if(app.modal.isSupported) {
-		app.modal.enhance();
+	if(app.alertDialog.isSupported) {
+		app.alertDialog.enhance();
 	}
 
 	if(app.tabs.isSupported) {

@@ -1,6 +1,6 @@
 {% extends "views/_base/base.html" %}
 
-{% from "components/modal-window/modal-window.html" import modalWindow %}
+{% from "components/alert-dialog/alert-dialog.html" import alertDialog %}
 
 {%
 set content = {
@@ -19,5 +19,5 @@ set content = {
 {% endblock %}
 
 {% block sidecontent %}
-	{{ modalWindow(content) }}
+	{{ alertDialog(content) }}
 {% endblock %}
