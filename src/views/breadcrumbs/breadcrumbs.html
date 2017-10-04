@@ -1,0 +1,34 @@
+{% extends "views/_base/base.html" %}
+
+{% from "components/breadcrumbs/breadcrumbs.html" import breadcrumbs %}
+
+{%
+set content = [
+	{
+		"label": "Books",
+		"action": "#",
+		"isCurrent": false
+	},
+	{
+		"label": "Science Fiction & Fantasy",
+		"action": "#",
+		"isCurrent": false
+	},
+	{
+		"label": "Science Fiction",
+		"action": "#",
+		"isCurrent": false
+	},
+	{
+		"label": "The Hitchhiker's Guide to the Galaxy",
+		"action": "#",
+		"isCurrent": true
+	}
+]
+%}
+
+{% block content %}
+	<h2>Breadcrumbs</h2>
+
+	{{ breadcrumbs(content) }}
+{% endblock %}

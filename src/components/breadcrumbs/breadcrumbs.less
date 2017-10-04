@@ -1,0 +1,27 @@
+.breadcrumbs {
+	padding: @spacing-default/2 @spacing-default;
+	background-color: @brand-grey;
+
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li,
+	li a {
+		display: inline-block;
+	}
+
+	li:last-child a {
+		text-decoration: none;
+	}
+
+	li + li:before {
+		content: '';
+		display: inline-block;
+		margin: 0 @spacing-default/2 0 @spacing-default/4;
+		height: @spacing-default*.7;
+		border-right: 2px solid @grey-dark;
+	}
+}

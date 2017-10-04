@@ -1,0 +1,14 @@
+{% macro breadcrumbs(content) %}
+<nav aria-label="Breadcrumbs" class="breadcrumbs">
+	<ol>
+		{% for item in content %}
+			<li>
+				<a href="{{ item.action }}"
+				   {% if item.isCurrent %}aria-current="page"{% endif %}>
+					{{ item.label }}
+				</a>
+			</li>
+		{% endfor %}
+	</ol>
+</nav>
+{% endmacro %}
