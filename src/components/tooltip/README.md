@@ -2,15 +2,15 @@
 
 ## Functionality
 
-The tooltip is a cntextual popup which displays extra information about an element. A tooltip consists of a button and accompanying descriptive information. When hovering or focusing on the button the tooltip is shown but visually as for assistive technology.
+The tooltip is a cntextual popup which displays extra information about an element. A tooltip consists of a button and accompanying descriptive information. When hovering or focusing on the button the tooltip is shown both visually as for assistive technology.
 
 ### More information
 
-The tabs component is based on the [Tooltip widget](https://www.w3.org/TR/2013/WD-wai-aria-practices-20130307/#tooltip) best practice of the W3C and makes use of the aria role [tooltip](https://www.w3.org/TR/wai-aria/roles#tooltip).
+The tooltip component is based on the [Tooltip widget](https://www.w3.org/TR/wai-aria-practices/#tooltip) best practice of the W3C and makes use of the aria role [tooltip](https://www.w3.org/TR/wai-aria/roles#tooltip) and property [aria-describedby](https://www.w3.org/TR/wai-aria-1.1/#aria-describedby).
 
 ## Usage
 
-The tab component consists of a `button` and a `span` element.
+The tooltip component consists of a `button` and a `span` element.
 
 To the `span`, add:
 
