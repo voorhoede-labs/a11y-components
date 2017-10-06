@@ -4,6 +4,10 @@
 
 An expandable component is controlled by a button, which toggles the visibility of the content of the expandable. The content of the expandable is initially hidden.
 
+### Keyboard interaction
+
+The user can toggle between the visibility of the content of an expandable using the enter or space key.
+
 ### More information
 
 The expandable component is based on the [Disclosure widget](https://www.w3.org/TR/wai-aria-practices/#disclosure) best practice of the W3C and makes use of:
