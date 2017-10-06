@@ -14,7 +14,14 @@ No special keyboard interaction is necessary for this component.
 
 ### More information
 
-The alert component is based on the [Alert component](https://www.w3.org/TR/wai-aria-practices/#alert) best practice of the W3C and has a role of [alert](https://www.w3.org/TR/wai-aria-1.1/#alert). An alert can have a attribute of [aria-live](https://www.w3.org/TR/wai-aria-1.1/#aria-live) and [aria-atomic](https://www.w3.org/TR/wai-aria-1.1/#aria-atomic).
+The alert component is based on the [Alert component](https://www.w3.org/TR/wai-aria-practices/#alert) best practice of the W3C and makes use of the following roles:
+
+- [alert](https://www.w3.org/TR/wai-aria-1.1/#alert)
+
+The alert component also makes use of:
+
+- aria property [aria-live](https://www.w3.org/TR/wai-aria-1.1/#aria-live)
+- aria property [aria-atomic](https://www.w3.org/TR/wai-aria-1.1/#aria-atomic)
 
 ## Usage
 
