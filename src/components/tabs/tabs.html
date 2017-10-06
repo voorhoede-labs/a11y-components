@@ -1,9 +1,12 @@
 {% macro tabs(content) %}
 <div class="tabs" data-tabs>
-	<ul class="tabs-list flat-list" data-tabs-list>
-		{% for item in content %}
+	<ul class="tabs-list flat-list"
+		aria-label="{{ content.title }}"
+		data-tabs-list>
+		{% for item in content.tabs %}
 		<li class="tab" data-tabs-tab>
-			<a href="#{{ item.id }}"
+			<a href="#panel-{{ item.id }}"
+			   id="tab-{{ item.id }}"
 			   aria-controls="{{ item.id }}"
 			   data-tabs-trigger="{{loop.index}}">
 				{{ item.title }}
@@ -12,9 +15,10 @@
 		{% endfor %}
 	</ul>
 
-	{% for item in content %}
-	<section id="{{ item.id }}"
+	{% for item in content.tabs %}
+	<section id="panel-{{ item.id }}"
 			 class="tab-content"
+			 aria-labelledby="tab-{{ item.id }}"
 			 data-tabs-content="{{loop.index}}">
 		<h3>{{ item.title }}</h3>
 

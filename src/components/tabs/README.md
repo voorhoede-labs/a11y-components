@@ -4,11 +4,29 @@
 
 The tabs component consists of a series of contentpanels controlled by tabs. One content panel is shown at a time. The user can make a content panel visible by clicking the associated tab.
 
-Keyboard users can interact with the tab component by focusing on the list of tabs. They can then use the arrow keys to show the associated content panels.
+### Keyboard interaction
+
+Keyboard users can interact with the tab component by focusing on the list of tabs. They can then use the arrow keys to show the associated content panels (left and down key moves left, right end up key moves right).
+
+If focus is on the first tab and the user presses the left or up key, focus moves to the last tab. Similarly, if the focus is on the last tab and the user presses the right or down key, focus moves to the first tab.
+
+The first element of focus after the tablist is the active panel belonging to the currently selected tab.
 
 ### More information
 
-The tabs component is based on the [Tab Panel widget](https://www.w3.org/TR/2013/WD-wai-aria-practices-20130307/#tabpanel) best practice of the W3C and makes use of the aria roles [tab](https://www.w3.org/TR/wai-aria/roles#tab), [tablist](https://www.w3.org/TR/wai-aria/roles#tablist) and [tabpanel](https://www.w3.org/TR/wai-aria/roles#tabpanel).
+The tabs component is based on the [Tab Panel widget](https://www.w3.org/TR/wai-aria-practices/#tabpanel) best practice of the W3C and makes use of the following roles:
+
+- [tab](https://www.w3.org/TR/wai-aria/roles#tab)
+- [tablist](https://www.w3.org/TR/wai-aria/roles#tablist)
+- [tabpanel](https://www.w3.org/TR/wai-aria/roles#tabpanel)
+
+The tabs component also makes use of:
+
+- aria property [aria-controls](https://www.w3.org/TR/wai-aria-1.1/#aria-controls)
+- aria property [aria-label](https://www.w3.org/TR/wai-aria-1.1/#aria-label)
+- aria property [aria-labelledby](https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby)
+- aria state [aria-selected](https://www.w3.org/TR/wai-aria-1.1/#aria-selected)
+- attribute [tabindex](https://www.w3.org/TR/html5/editing.html#attr-tabindex)
 
 ## Usage
 

@@ -30,15 +30,13 @@
 			});
 
 			[].forEach.call(content, function(contentElement, counter) {
-				var firstContentChild = contentElement.childNodes[1];
-
 				if(counter > 0) {
 					contentElement.classList.add('hidden');
 					contentElement.setAttribute('aria-hidden', 'true');
 				}
 
 				contentElement.setAttribute('role', 'tabpanel');
-				firstContentChild.setAttribute('tabindex', '0');
+				contentElement.setAttribute('tabindex', '0');
 			});
 
 			[].forEach.call(triggers, function(trigger, counter) {
