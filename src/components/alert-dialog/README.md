@@ -2,20 +2,32 @@
 
 ## Functionality
 
+An alert dialog is a special kind of dialog that divert the attention of the user to a important message. Assistive technology may give extra attention to an alert dialog, as opposed to a normal dialog window, which doesn't neet to be given extra attention.
+
 When the user activates the alert dialog by pressing a button, a dialog window will show which requires the user to take an action. The alert dialog can be close by pressing a button.
 
-When opening the window, assistive technology will announce that a alert dialog is opened. After that, assistive technology will announce the name of the alert dialog as defined in the containing heading.
+### Keyboard interaction
+
+The user can open and close the alert dialog by pressing the enter key on the open and close button.
 
 > **BEWARE**  
-  The keyboard user, once inside the alert dialog, cannot access any other content on the page. Until the user closes the alert dialog, only the content in the alert dialog is accessible. Use this component only if it is absolutely necessary that a user provides input.
+  The keyboard user, once inside the alert dialog, cannot access any other content on the page. Until the user closes the alert dialog, only the content in the alert dialog is accessible.
 
 ### More information
 
-The alert dialog has an ARIA role of `alertdialog`; you can find more information in the [W3C recommendation](https://www.w3.org/TR/wai-aria/roles#alertdialog).
+The alert dialog component is based on the [Alert dialog widget](https://www.w3.org/TR/wai-aria-practices/#alertdialog) best practice of the W3C and makes use of the following roles:
+
+- [alertdialog](https://www.w3.org/TR/wai-aria/roles#alertdialog)
+
+The tabs component also makes use of:
+
+- aria property [aria-modal](https://www.w3.org/TR/wai-aria-1.1/#aria-modal)
+- aria property [aria-labelledby](https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby)
+- attribute [tabindex](https://www.w3.org/TR/html5/editing.html#attr-tabindex)
 
 ## Usage
 
-A alert dialog consists of an overlay `div` containing a `div` of the actual alert dialog. The alert dialog contains at least a `h1` element describing the content of the alert dialog and a button to close the alert dialog.
+An alert dialog consists of an overlay `div` containing a `div` of the actual alert dialog. The alert dialog contains at least a `h1` element describing the content of the alert dialog and a button to close the alert dialog.
 
 > **BEWARE**  
   Make sure the overlay `div` is a direct child of the `body` in order to get the content blocking to work.
