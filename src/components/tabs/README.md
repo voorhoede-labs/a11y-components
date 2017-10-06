@@ -65,29 +65,29 @@ To each content content panel, add:
 <div class="tabs" data-tabs>
 	<ul class="tabs-list flat-list" data-tabs-list>
 		<li class="tab" data-tabs-tab>
-			<a href="#section1" aria-controls="section1" data-tabs-trigger="1">Section 1</a>
+			<a href="#section1" id="section1" aria-controls="section1" data-tabs-trigger="1">Section 1</a>
 		</li>
 		<li class="tab" data-tabs-tab>
-			<a href="#section2" aria-controls="section2" data-tabs-trigger="2">Section 2</a>
+			<a href="#section2" id="section2" aria-controls="section2" data-tabs-trigger="2">Section 2</a>
 		</li>
 		<li class="tab" data-tabs-tab>
-			<a href="#section3" aria-controls="section3" data-tabs-trigger="3">Section 3</a>
+			<a href="#section3" id="section3" aria-controls="section3" data-tabs-trigger="3">Section 3</a>
 		</li>
 	</ul>
 
-	<section id="section1" class="tab-content" data-tabs-content="1">
+	<section id="section1" class="tab-content" aria-labelledby="section1" data-tabs-content="1">
 		<h3>Section 1</h3>
 
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 	</section>
 
-	<section id="section2" class="tab-content" data-tabs-content="2">
+	<section id="section2" class="tab-content" aria-labelledby="section2" data-tabs-content="2">
 		<h3>Section 2</h3>
 
 		<p>Phasellus ex neque, ullamcorper ut faucibus ac, suscipit a nibh.</p>
 	</section>
 
-	<section id="section3" class="tab-content" data-tabs-content="3">
+	<section id="section3" class="tab-content" aria-labelledby="section3" data-tabs-content="3">
 		<h3>Section 3</h3>
 
 		<p>Duis congue velit eget eros tempor molestie.</p>
