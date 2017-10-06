@@ -2,11 +2,17 @@
 
 ## Functionality
 
-The tooltip is a cntextual popup which displays extra information about an element. A tooltip consists of a button and accompanying descriptive information. When hovering or focusing on the button the tooltip is shown both visually as for assistive technology.
+The tooltip is a contextual popup which displays extra information about an element. A tooltip consists of a button (or other element) and accompanying descriptive information. When hovering or focusing on the button the tooltip is shown both visually and for assistive technology.
 
 ### More information
 
-The tooltip component is based on the [Tooltip widget](https://www.w3.org/TR/wai-aria-practices/#tooltip) best practice of the W3C and makes use of the aria role [tooltip](https://www.w3.org/TR/wai-aria/roles#tooltip) and property [aria-describedby](https://www.w3.org/TR/wai-aria-1.1/#aria-describedby).
+The tooltip component is based on the [Tooltip widget](https://www.w3.org/TR/wai-aria-practices/#tooltip) best practice of the W3C and makes use of the following roles:
+
+- [tooltip](https://www.w3.org/TR/wai-aria/roles#tooltip) 
+
+The tooltip component also makes use of:
+
+- aria property [aria-describedby](https://www.w3.org/TR/wai-aria-1.1/#aria-describedby)
 
 ## Usage
 
