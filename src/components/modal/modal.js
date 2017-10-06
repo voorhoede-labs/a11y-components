@@ -1,12 +1,12 @@
 (function(app) {
 
-	var SELECTOR_TRIGGER = '[data-alert-dialog-trigger]';
-	var SELECTOR_TRIGGER_ATTR = 'data-alert-dialog-trigger';
-	var SELECTOR_ALERT_DIALOG_OVERLAY_ATTR = 'data-alert-dialog-overlay';
-	var SELECTOR_ALERT_DIALOG_WINDOW = '[data-alert-dialog-window]';
-	var SELECTOR_CLOSE_BUTTON = '[data-alert-dialog-close]';
+	var SELECTOR_TRIGGER = '[data-modal-trigger]';
+	var SELECTOR_TRIGGER_ATTR = 'data-modal-trigger';
+	var SELECTOR_MODAL_OVERLAY_ATTR = 'data-modal-overlay';
+	var SELECTOR_MODAL_WINDOW = '[data-modal-window]';
+	var SELECTOR_CLOSE_BUTTON = '[data-modal-close]';
 
-	app.alertDialog = {
+	app.modal = {
 		isSupported: 'querySelector' in document && 'classList' in document.documentElement,
 		enhance: enhance
 	};
@@ -16,51 +16,55 @@
 
 		[].forEach.call(triggers, function(trigger) {
 			var triggerName = trigger.getAttribute(SELECTOR_TRIGGER_ATTR);
-			var alertDialogOverlay = document.querySelector('[' + SELECTOR_ALERT_DIALOG_OVERLAY_ATTR + '=' + triggerName + ']');
-			var alertDialogWindow = alertDialogOverlay.querySelector(SELECTOR_ALERT_DIALOG_WINDOW);
-			var closeButton = alertDialogOverlay.querySelector(SELECTOR_CLOSE_BUTTON);
+			var modalOverlay = document.querySelector('[' + SELECTOR_MODAL_OVERLAY_ATTR + '=' + triggerName + ']');
+			var modalWindow = modalOverlay.querySelector(SELECTOR_MODAL_WINDOW);
+			var closeButton = modalOverlay.querySelector(SELECTOR_CLOSE_BUTTON);
 
 			trigger.addEventListener('click', function() {
-				openAlertDialogWindow(alertDialogOverlay, alertDialogWindow, closeButton);
+				openModalWindow(modalOverlay, modalWindow, trigger, closeButton);
 			});
 
 			closeButton.addEventListener('click', function() {
-				closeAlertDialogWindow(trigger, alertDialogOverlay);
+				closeModalWindow(trigger, modalOverlay);
 			});
 		});
 	}
 
-	function openAlertDialogWindow(alertDialogOverlay, alertDialogWindow, closeButton) {
-		alertDialogWindow.addEventListener('keydown', function(e) {
+	function openModalWindow(modalOverlay, modalWindow, trigger, closeButton) {
+		modalWindow.addEventListener('keydown', function(e) {
 			trapTabkey(e, this);
+
+			if(e.keyCode === 27) {
+				closeModalWindow(trigger, modalOverlay);
+			}
 		});
 
 		// Hide main content from screenreader
-		var allContent = document.querySelectorAll('body > *:not(.alert-dialog)');
+		var allContent = document.querySelectorAll('body > *:not(.modal)');
 		[].forEach.call(allContent, function(element) {
 			element.setAttribute('aria-hidden', 'true');
 		});
 
-		alertDialogOverlay.classList.remove('hidden');
-		alertDialogOverlay.setAttribute('aria-hidden', 'false');
+		modalOverlay.classList.remove('hidden');
+		modalOverlay.setAttribute('aria-hidden', 'false');
 		closeButton.focus();
 	}
 
-	function closeAlertDialogWindow(trigger, alertDialogOverlay) {
+	function closeModalWindow(trigger, modalOverlay) {
 		// Show main content to screenreader again
-		var allContent = document.querySelectorAll('body > *:not(.alert-dialog)');
+		var allContent = document.querySelectorAll('body > *:not(.modal)');
 		[].forEach.call(allContent, function(element) {
 			element.removeAttribute('aria-hidden');
 		});
 
-		alertDialogOverlay.classList.add('hidden');
-		alertDialogOverlay.setAttribute('aria-hidden', 'true');
+		modalOverlay.classList.add('hidden');
+		modalOverlay.setAttribute('aria-hidden', 'true');
 		trigger.focus();
 	}
 
-	function trapTabkey(e, alertDialogWindow) {
+	function trapTabkey(e, modalWindow) {
 		var focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
-		var focusableElementsList = alertDialogWindow.querySelectorAll(focusableElementsString);
+		var focusableElementsList = modalWindow.querySelectorAll(focusableElementsString);
 		var focusableElements = Array.prototype.slice.call(focusableElementsList);
 
 		var firstTabStop = focusableElements[0];

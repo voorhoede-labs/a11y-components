@@ -1,20 +1,21 @@
 {% macro alertDialog(content) %}
-<div class="modal hidden"
-	 data-modal-overlay="{{ content.name }}"
+<div class="alert-dialog hidden"
+	 data-alert-dialog-overlay="{{ content.name }}"
 	 aria-hidden="true">
 
-	<div class="modal-window"
+	<div class="alert-dialog-window"
 		 role="alertdialog"
 		 aria-modal="true"
-		 aria-labelledby="modal-title"
+		 aria-labelledby="alert-dialog-title"
 		 tabindex="0"
-		 data-modal-window>
+		 data-alert-dialog-window>
 
-		<h1 id="modal-title">{{ content.title }}</h1>
+		<h1 id="alert-dialog-title">{{ content.title }}</h1>
 
 		<p>{{ content.content }}</p>
 
-		<button data-modal-close>{{ content.closeButtonLabel }}</button>
+		<button data-alert-dialog-close>{{ content.cancelButtonLabel }}</button>
+		<button>{{ content.confirmButtonLabel }}</button>
 	</div>
 </div>
 {% endmacro %}

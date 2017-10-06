@@ -34,40 +34,40 @@ An alert dialog consists of an overlay `div` containing a `div` of the actual al
 
 To the overlay `div`, add:
 
-- a class of `modal`
-- the data-attribute `data-model-overlay="[MODAL-NAME]"`
+- a class of `alert-dialog`
+- the data-attribute `data-alert-dialog-overlay="[MODAL-NAME]"`
 - the attribute `hidden`
 
 To the containing alert dialog `div`, add:
 
-- a class of `modal-window`
+- a class of `alert-dialog-window`
 - a role of `alertdialog`
 - the attribute `aria-labelledby="[DESCRIPTION-NAME]"`
 - the attribute `tabindex="0"`
-- the data-attribute `data-modal-window`
+- the data-attribute `data-alert-dialog-window`
 
 In the alert dialog `div`, add:
 
 - a `h1` element with an id of `[DESCRIPTION-NAME]` as used in the `aria-labelledby` attribute of the alert dialog
-- a `button` with the data-attribute `data-modal-close`
+- a `button` with the data-attribute `data-alert-dialog-close`
 - the content of the alert dialog
 
 To trigger the alert dialog, add:
 
-- a `button` with `data-model-trigger="[MODAL-NAME]"` where `[MODAL-NAME]` is the same as the name in the `data-modal-overlay` data-attribute of the overlay.
+- a `button` with `data-alert-dialog-trigger="[MODAL-NAME]"` where `[MODAL-NAME]` is the same as the name in the `data-alert-dialog-overlay` data-attribute of the overlay.
 
 ## Example
 
 ```html
-<button data-modal-trigger="delete-account-warning">Delete account</button>
+<button data-alert-dialog-trigger="delete-account-warning">Delete account</button>
 
-<div class="modal" data-modal-overlay="delete-account-warning" hidden>
-	<div class="modal-window" role="alertdialog" aria-labelledby="delete-account-description" tabindex="0" data-modal-window>
+<div class="alert-dialog" data-alert-dialog-overlay="delete-account-warning" hidden>
+	<div class="alert-dialog-window" role="alertdialog" aria-labelledby="delete-account-description" tabindex="0" data-alert-dialog-window>
 		<h1 id="delete-account-description">Are you sure you want to delete your account?</h1>
 		
 		<p>Deleting your account is irreversible. Do you really want to delete your account?</p>
 
-		<button data-modal-close>No</button>
+		<button data-alert-dialog-close>No</button>
 		<button>Yes, delete my account</button>
 	</div>
 </div>
