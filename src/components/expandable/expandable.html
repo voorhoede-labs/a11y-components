@@ -1,7 +1,8 @@
 {% macro expandable(content) %}
 <div class="expandable">
 	<h3>
-		<button class="h3 expandable__trigger"
+		<button id="{{ content.name }}"
+				class="h3 expandable__trigger"
 				aria-controls="expandable-content"
 				data-expandable-trigger="{{ content.name }}">
 			{{ content.title }}
@@ -10,6 +11,7 @@
 
 	<div id="expandable-content"
 		 class="expandable__content"
+		 aria-labelledby="{{ content.name }}"
 		 data-expandable-content="{{ content.name }}">
 		<p>{{ content.content }}</p>
 	</div>
