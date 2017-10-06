@@ -10,7 +10,10 @@ No special keyboard interaction is necessary for this component.
 
 ### More information
 
-The breadcrumbs component is based on the [Breadcrumb component](https://www.w3.org/TR/wai-aria-practices/#breadcrumb) best practice of the W3C and makes use of [aria label](https://www.w3.org/TR/wai-aria-1.1/#aria-label) and state [aria-current](https://www.w3.org/TR/wai-aria-1.1/#aria-current).
+The breadcrumbs component is based on the [Breadcrumb component](https://www.w3.org/TR/wai-aria-practices/#breadcrumb) best practice of the W3C and makes use of:
+
+- property [aria label](https://www.w3.org/TR/wai-aria-1.1/#aria-label) 
+- state [aria-current](https://www.w3.org/TR/wai-aria-1.1/#aria-current)
 
 ## Usage
 
